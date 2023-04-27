@@ -1,31 +1,24 @@
+import ICars from '../Interfaces/ICars';
+
 class CarsDomains {
-  private id: string | undefined;
+  private id?: string | undefined;
   private model: string;
   private year: number;
   private color: string;
-  private status: boolean | false;
+  private status?: boolean | false;
   private buyValue: number;
   private doorsQty: number;
   private seatsQty: number;
   
-  constructor(
-    id: string | undefined,
-    model: string,
-    year: number,
-    color: string,
-    status: boolean | false,
-    buyValue: number,
-    doorsQty: number, 
-    seatsQty: number,
-  ) {
-    this.id = id;
-    this.model = model;
-    this.year = year;
-    this.color = color;
-    this.status = status;
-    this.buyValue = buyValue;
-    this.doorsQty = doorsQty;
-    this.seatsQty = seatsQty;
+  constructor(cars: ICars) {
+    this.id = cars.id;
+    this.model = cars.model;
+    this.year = cars.year;
+    this.color = cars.color;
+    this.status = cars.status;
+    this.buyValue = cars.buyValue;
+    this.doorsQty = cars.doorsQty;
+    this.seatsQty = cars.seatsQty;
   }
 
   public getId(): string | undefined {
@@ -56,7 +49,7 @@ class CarsDomains {
     this.color = value;
   }
   
-  public getStatus(): boolean | false {
+  public getStatus() {
     return this.status;
   }
   public setStatus(value: boolean | false) {

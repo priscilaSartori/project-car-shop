@@ -1,10 +1,10 @@
-import CarsDomains from '../Domains/CarsDomains';
-import ICars from '../Interfaces/ICars';
+import CarsDomains from '../Domains/Car';
+import ICar from '../Interfaces/ICar';
 
 class CarsService {
-  public createCars(cars: ICars): CarsDomains | null {
+  public createCars(cars: ICar): CarsDomains | null {
     if (cars) {
-      return new CarsDomains(cars as ICars);
+      return new CarsDomains(cars as ICar);
     }
     return null;
   }

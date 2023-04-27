@@ -4,14 +4,14 @@ import {
   model,
   models,
 } from 'mongoose';
-import ICars from '../Interfaces/ICars';
+import ICar from '../Interfaces/ICar';
 
 class CarsModel {
-  private schema: Schema;
-  private model: Model<ICars>;
+  public schema: Schema;
+  public model: Model<ICar>;
 
   constructor() {
-    this.schema = new Schema<ICars>({
+    this.schema = new Schema<ICar>({
       model: { type: String, required: true },
       year: { type: Number, required: true },
       color: { type: String, required: true },
@@ -23,7 +23,7 @@ class CarsModel {
     this.model = models.CarsDomains || model('Cars', this.schema);
   }
 
-  public async create(cars: ICars): Promise<ICars> {
+  public async create(cars: ICar): Promise<ICar> {
     return this.model.create({ ...cars });
   }
 }

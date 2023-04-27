@@ -1,16 +1,16 @@
-import ICars from '../Interfaces/ICars';
+import ICar from '../Interfaces/ICar';
 
-class CarsDomains {
-  private id?: string | undefined;
-  private model: string;
-  private year: number;
-  private color: string;
-  private status?: boolean | false;
-  private buyValue: number;
+class Car {
+  protected id?: string | undefined;
+  protected model: string;
+  protected year: number;
+  protected color: string;
+  protected status?: boolean | false;
+  protected buyValue: number;
   private doorsQty: number;
   private seatsQty: number;
   
-  constructor(cars: ICars) {
+  constructor(cars: ICar) {
     this.id = cars.id;
     this.model = cars.model;
     this.year = cars.year;
@@ -78,4 +78,4 @@ class CarsDomains {
   }
 }
 
-export default CarsDomains;  
+export default Car;  

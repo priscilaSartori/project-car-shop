@@ -1,4 +1,4 @@
-interface ICars {
+interface ICar {
   id?: string;
   model: string;
   year: number;
@@ -9,4 +9,4 @@ interface ICars {
   seatsQty: number;
 }
 
-export default ICars;
+export default ICar;

@@ -15,16 +15,16 @@ class CarsModel {
       model: { type: String, required: true },
       year: { type: Number, required: true },
       color: { type: String, required: true },
-      status: { type: Boolean, required: true },
+      status: { type: Boolean, required: false },
       buyValue: { type: Number, required: true },
       doorsQty: { type: Number, required: true },
       seatsQty: { type: Number, required: true },
     });
-    this.model = models.CarsDomains || model('Cars', this.schema);
+    this.model = models.Car || model('Car', this.schema);
   }
 
-  public async create(cars: ICar): Promise<ICar> {
-    return this.model.create({ ...cars });
+  public async create(car: ICar): Promise<ICar> {
+    return this.model.create({ ...car });
   }
 }
 

@@ -18,4 +18,9 @@ carRoute.get(
   (req, res, next) => new CarsConstroller(req, res, next).getById(),
 );
 
+carRoute.put(
+  '/cars/:id',
+  (req, res, next) => new CarsConstroller(req, res, next).update(),
+);
+
 export default carRoute;

@@ -3,6 +3,6 @@ import CarsRouter from './Routes/CarsRouter';
 
 const app = express();
 app.use(express.json());
-app.use(CarsRouter);
+app.use('/cars', CarsRouter);
 
 export default app;

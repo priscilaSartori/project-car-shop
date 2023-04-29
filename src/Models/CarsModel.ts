@@ -3,6 +3,7 @@ import {
   Schema,
   model,
   models,
+  UpdateQuery,
 } from 'mongoose';
 import ICar from '../Interfaces/ICar';
 
@@ -33,6 +34,14 @@ class CarsModel {
   
   public async getById(id: string): Promise<ICar | null> {
     return this.model.findOne({ _id: id });
+  }
+
+  public async update(id: string, obj: Partial<ICar>):
+  Promise<ICar | null> {
+    return this.model.findByIdAndUpdate(
+      { _id: id },
+      { ...obj } as UpdateQuery<ICar>,
+    );
   }
 }
 

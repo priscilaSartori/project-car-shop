@@ -1,7 +1,7 @@
 import { isValidObjectId } from 'mongoose';
 import CarsDomains from '../Domains/Car';
 import ICar from '../Interfaces/ICar';
-import CarsModel from '../Models/CarsModel';
+import CarsModel from '../Models/CarsODM';
 
 class CarsService {
   public async createCars(cars: ICar) {

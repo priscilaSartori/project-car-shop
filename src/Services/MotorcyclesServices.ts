@@ -27,7 +27,7 @@ class MotorcyclesService {
     const motorcyclesModel = new MotorcyclesModel();
     if (!isValidObjectId(id)) return { status: 422, message: { message: 'Invalid mongo id' } };
     const motorcycles = await motorcyclesModel.getById(id);
-    if (motorcycles === null) return { status: 404, message: { message: 'Car not found' } };
+    if (motorcycles === null) return { status: 404, message: { message: 'Motorcycle not found' } };
     const newMotorcycles = motorcycles ? new MotorcyclesDomains(motorcycles) : null;
     return { status: 200, message: newMotorcycles };
   }

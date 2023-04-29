@@ -31,6 +31,15 @@ class CarsService {
     const newCars = cars ? new CarsDomains(cars) : null;
     return { status: 200, message: newCars };
   }
+
+  public async update(id: string, cars: ICar) {
+    const carsModel = new CarsModel();
+    if (!isValidObjectId(id)) return { status: 422, message: { message: 'Invalid mongo id' } };
+    const carsUpdate = await carsModel.update(id, cars);
+    if (carsUpdate === null) return { status: 404, message: { message: 'Car not found' } };
+    const newCars = carsUpdate ? new CarsDomains(cars) : null;
+    return { status: 200, message: newCars };
+  }
 }
 
 export default CarsService;
